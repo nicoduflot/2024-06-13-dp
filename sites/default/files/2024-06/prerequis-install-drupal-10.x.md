@@ -120,24 +120,44 @@ Accueil > Administration > Structure > Types de contenu > Article > gérer les c
 ### Les type de contenus
 
 Sur Ce drupal (adresse local www.fallout-4.local), nous allons créer les type de contenu suivants : 
-Quête
+#### Quête
 - Nom de quête (Titre par défaut)
 - Type de quête (principale ou annexe => taxonomie type de quête, DLC ou non)
 - Personnages importants
 - Résumé de la quête
 - Déroulé de la quête
 
-Personnage
+#### Personnage
 - Nom (titre par défaut)
 - Quêtes en relation
 - Factions
 - Biographie
 
-Faction
+#### Faction
 - Nom (titre par défaut)
 - Personnages Membres
 - Description
 - Chronologie
+
+##### Pour créer un type de contenu
+Accueil > Administration > Structure > Types de contenu > Ajouter un type de contenu
+
+1. Création du nom de contenu et sa configuration générale
+	Nom
+	Description
+	Libellé du titre (si différent de titre)
+	Options de publication
+	Paramètres de langues
+	Paramètre d'affichage
+	Paramètres du menu
+2. Gérer les champs
+	Ajouter les champs nécessaire à la rédaction du contenu
+3. Gérer l'affichage du formulaire
+	Ordonner la hiérarchie de saisie du contenu
+4. Gérer l'affichage
+	Hierarchie d'affichage du contenu sur le site
+5. Gérer les droits
+	Indiquer les droits d'ajout, modification, suppression et révision du contenu pour les rôles d'utilisateurs du site
 
 ### Les taxonomies
 
@@ -147,6 +167,10 @@ Faction
 - DLC - Nuka World
 - DLC - Far Harbor
 - DLC - Automatron
+
+##### Pour créer une taxonomie
+
+
 
 ### Les vues
 Créer une vue regroupant chaque type de contenu.
