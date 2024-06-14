@@ -2,3 +2,7 @@ global-styling:
   css:
     theme:
       css/style.css: {}
+      css/overseer.css: {}
+      css/custom.css: {}
+  js: 
+    js/scripts.js: {}

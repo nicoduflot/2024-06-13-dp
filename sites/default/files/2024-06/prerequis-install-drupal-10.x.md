@@ -194,6 +194,42 @@ Il faut maintenant ajouter des termes au vocabulaire
 Créer une vue regroupant chaque type de contenu.
 Ce sont ces vues qui seront visible dans le menu principal de navigation
 
+#### Vue Articles
+
+#### Vue Quêtes
+
+#### Vue Personnages
+
+#### Vue Factions
+
+##### Création d'une vue Page
+
+Accueil > Administration > Structure > Vues > Ajouter une vue
+
+1. Nom de la vue
+2. Configurer le type de contenu a afficher
+3. Configurer la page d'affichage : 
+	- Cocher la case "Créer une page"
+	- Titre de la page
+	- Chemin de la page
+	- Paramètre d'affichage de la page
+	- Configuration pagination
+	- Créer ou non un lien de menu
+		- si lien, configurer le texte du lien
+	- enregistrer la configuration
+4. Configuration de la vue, permet de : 
+	- Format de l'affichage des éléments dans la vue
+	- choisir le contenu des élément affichés dans la vue
+	- Ajouter des filtres dans la vue
+	- Apparence de la pagination
+	- etc.
+
+##### Création d'une vue Block
+
+A la création d'une vue, si un bloc est nécéssaire aussi, le créer en même temps.
+
+Les réglages sont les mêmes que pour une vue.
+
 ### les alias d'url
 
 Dès qu'un type de contenu est créé, du contenu, de la taxonomie, une vue, on crée un pathauto en suivant.
@@ -206,3 +242,54 @@ Ce thème permet de créer rapidement un thème enfant préconfiguré pour boots
 
 On installe le thème puis on va créer un thème enfant.
 
+### Modifier le thème enfant
+
+#### Activer le débug de thème
+Dans le répertoire sites > default créer une copie du fichier default.services.yml et le renommer services.yml
+
+Trouver les lignes correspondant au débugg du moteur de template twig
+
+Ces lignes commencent à la clef ```twig.config``` dans le fichier
+
+```
+82 debug: true
+91 auto_reload: true
+102 cache: false
+```
+
+#### Surcharger le thème
+
+Une fois le débig activé, chaque élément affiché sur la page se vois, dans le code html (à l'inspecteur de code par exemple), entouré d'un commentaire qui ressemble à ça : 
+
+```
+<!-- FILE NAME SUGGESTIONS:
+   * block--falloutfansiteb5-main-navigation.html.twig
+   * block--system-menu-block--main.html.twig
+   x block--system-menu-block.html.twig
+   * block--system.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/bootstrap5/templates/block/block--system-menu-block.html.twig' -->
+
+<elementHtml>
+</elementHtml>
+
+<!-- END OUTPUT from 'themes/bootstrap5/templates/block/block--system-menu-block.html.twig' -->
+```
+
+Le x indique le template actuellement utilisé.
+
+Les autres noms sont des suggestions de nom de fichier a utiliser dans le thème enfant afin de surcharger le twig original.
+
+En dessus est indiqué l'endroit tu template twig utilisé
+
+Pour surcharger ici ```block--system-menu-block.html.twig```, 
+il faut recréer dans le répertoire template de notre thème la même arborescence de dossiers
+
+```/templates/block/```
+
+Dans ce dossier ```block```, on y copie ```block--system-menu-block.html.twig``` que l'on renome selon les choix proposés, ils sont pragmatiquement générés pour avoir du sens et surtout permettre se savoir rapidement quelle partie du template est surchargée.
+
+En le renommant par exemple ```block--falloutfansiteb5-main-navigation.html.twig```, je sais qu'il s'agit du template de la navigation principale de mon site.
+
+Car dans drupal (et avec twig en général), les templates sont créés de façon a être réutilisés de multiple fois, l'apparence qu'ils arborent dépend des données renvoyé dans leur vue par les controller de Drupal (Drupal est sur une base symfony, donc le templating twig y suis la logique MVC : Modèle Vue Contrôleur)
