@@ -21,14 +21,16 @@ WAMP dans Disque d'installation de wamp\wamp64\www
 Mamp dans Disque d'installation de MAMP:\MAMP puis chercher un répertoire HTDOCS
 XAMPP dans Disque d'installation de XAMPP:\xampp\htdocs 
 
-### Extensions simplifiants la configuration / l'utilisation.
-
 Si l'installation est sur un ordinateur local ou un serveur un peu casse pieds (protégé, firewall, etc)
 Préférer l'installer en anglais, on met en place la langue ensuite.
 
 Si au contraire le fichiert cacert.pem et le SSH est configuré, 
 il est possible de directement installer Drupal en français
 (la doc est en lien si l'installation en français plante)
+
+## Configuration
+
+### Extensions simplifiants la configuration / l'utilisation.
 
 #### Extensions native a activer
 - Media
@@ -111,4 +113,45 @@ Accueil > Administration > Structure > Types de contenu > Article > gérer les c
 	4. 1. Pour un champ image unique, limité à 1 média, et seulement les media de type image
 	4. 3. enregistrer la configuration
 5. Gérer l'affichage du formulaire (remettre le champs media à lancienne place du champ image)
-6. Gérer l'affichage du contenu (remettre le champs media à lancienne place du champ image)
+6. Gérer l'affichage du contenu (remettre le champs media à l'ancienne place du champ image)
+
+## Mise en place des contenus spécifiques au site
+
+### Les type de contenus
+
+Sur Ce drupal (adresse local www.fallout-4.local), nous allons créer les type de contenu suivants : 
+Quête
+- Nom de quête (Titre par défaut)
+- Type de quête (principale ou annexe => taxonomie type de quête, DLC ou non)
+- Personnages importants
+- Résumé de la quête
+- Déroulé de la quête
+
+Personnage
+- Nom (titre par défaut)
+- Quêtes en relation
+- Factions
+- Biographie
+
+Faction
+- Nom (titre par défaut)
+- Personnages Membres
+- Description
+- Chronologie
+
+### Les taxonomies
+
+#### Type de quête
+- FALLOUT 4 - Principale
+- FALLOUT 4 - Annexe
+- DLC - Nuka World
+- DLC - Far Harbor
+- DLC - Automatron
+
+### Les vues
+Créer une vue regroupant chaque type de contenu.
+Ce sont ces vues qui seront visible dans le menu principal de navigation
+
+### les alias d'url
+
+Dès qu'un type de contenu est créé, du contenu, de la taxonomie, une vue, on crée un pathauto en suivant.
