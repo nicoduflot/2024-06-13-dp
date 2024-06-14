@@ -120,6 +120,7 @@ Accueil > Administration > Structure > Types de contenu > Article > gérer les c
 ### Les type de contenus
 
 Sur Ce drupal (adresse local www.fallout-4.local), nous allons créer les type de contenu suivants : 
+
 #### Quête
 - Nom de quête (Titre par défaut)
 - Type de quête (principale ou annexe => taxonomie type de quête, DLC ou non)
@@ -141,6 +142,8 @@ Sur Ce drupal (adresse local www.fallout-4.local), nous allons créer les type d
 
 ##### Pour créer un type de contenu
 Accueil > Administration > Structure > Types de contenu > Ajouter un type de contenu
+
+Dans ce drupal, tous les types de contenus auront le champ Étiquettes
 
 1. Création du nom de contenu et sa configuration générale
 	Nom
@@ -170,7 +173,22 @@ Accueil > Administration > Structure > Types de contenu > Ajouter un type de con
 
 ##### Pour créer une taxonomie
 
+Accueil > Administration > Structure > Taxonomie > Ajouter un vocabulaire
 
+1. Indiquer le nom
+2. Indiquer le but du vocabulaire
+3. Préciser si besoin la langue utilisée pour le vocabulaire
+4. Préciser la langue des termes si différente de celle du site
+
+Une fois enregistré, on est redirigé vers la liste des termes du vocabulaire
+
+Il faut maintenant ajouter des termes au vocabulaire
+
+1. Ajouter un terme
+2. Son nom
+3. Sa description
+4. Si il faut enregistrer un autre terme, on clique sur "enregistrer"
+4. Si on a fini, on clique sur "enregistrer et aller à la liste"
 
 ### Les vues
 Créer une vue regroupant chaque type de contenu.
@@ -179,3 +197,12 @@ Ce sont ces vues qui seront visible dans le menu principal de navigation
 ### les alias d'url
 
 Dès qu'un type de contenu est créé, du contenu, de la taxonomie, une vue, on crée un pathauto en suivant.
+
+## L'apparence graphique
+On installe un thème, j'ai choisi bootstrap5
+https://www.drupal.org/project/bootstrap5
+
+Ce thème permet de créer rapidement un thème enfant préconfiguré pour bootstrap.
+
+On installe le thème puis on va créer un thème enfant.
+
